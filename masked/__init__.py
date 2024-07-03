@@ -9,7 +9,7 @@ def mask_input(p, mask_with='•'):
 			if char == '\r':break
 			elif char == '\x08':
 				text = text[:-1]
-				print(f'\r{p}{" "*char_count}', end='')
+				print(f'\r{p}{mask_with*(char_count - 1) + " "}', end='')
 				char_count -= 1 if char_count > 0 else 0
 			else:
 				text+=char
